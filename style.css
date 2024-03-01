@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Kode Mono";
+}
+
+body {
+    background-color: #000034;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    aspect-ratio: 1/.05;
+    background-color: white;
+
+    .header-box>* {
+        margin: 0 5%;
+    }
+
+    .header-box {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+            margin-left: 2%;
+            font-size: max(3dvw, 1rem);
+            text-align: center;
+        }
+
+        nav {
+            width: 30%;
+            aspect-ratio: 1/.1;
+
+            .navigation-box {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                a {
+                    color: black;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.hero-section {
+    box-shadow: inset 0 20px 10px -10px white;
+    background-image: url(/img/hero-bg.jpg);
+    background-repeat: repeat;
+    background-size: 100% auto;
+    width: 100%;
+    aspect-ratio: 1/.4;
+
+    .hero-container {
+        height: 100%;
+        width: 100%;
+
+        h1 {
+            padding-top: 2%;
+            text-align: center;
+            font-size: max(5dvw, 1rem);
+            color: white;
+            text-shadow: 0 0 10px #b7e2f8;
+        }
+
+        .hero-box> :first-child {
+            width: 25%;
+        }
+
+        .hero-box> :last-child {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            background-color: rgba(0, 0, 0, .4);
+            border-radius: 25px;
+        }
+
+        .hero-box {
+            margin-top: 3%;
+            display: flex;
+            justify-content: space-around;
+
+            img {
+                display: block;
+                border-radius: 100dvw;
+                width: 60%;
+            }
+
+
+            p {
+                padding-left: 3%;
+                width: 100%;
+                color: white;
+                font-size: max(2.5dvw, 1rem);
+            }
+        }
+    }
+}
+
+.files-section {
+    box-shadow: 0 -10px 10px 0 #000034;
+
+    .files-container {
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 10%;
+
+        h3 {
+            color: white;
+            text-align: center;
+            font-size: max(4dvw, 1rem);
+            padding: 3% 0;
+        }
+
+        .files-box {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 30% 30%;
+            justify-content: space-around;
+            row-gap: 20px;
+
+
+            li:hover {
+                background-color: #c4c4dd;
+                border-radius: 10px;
+                padding: 5% 0;
+
+                a {
+                    color: #000034;
+                }
+
+                img {
+                    display: block;
+                    margin: 2% auto;
+                }
+            }
+
+            li {
+                text-align: center;
+
+                a {
+                    font-size: max(1.5dvw, 1rem);
+                    color: #5ca5ca;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+
+                img {
+                    display: none;
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: 30%;
+    background-color: white;
+    padding-bottom: 15%;
+
+    h3 {
+        text-align: center;
+        font-size: max(4dvw, 1rem);
+        padding: 3% 0;
+    }
+
+    .footer-box {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 30% 30%;
+        justify-content: space-around;
+        row-gap: 20px;
+
+        li:hover {
+            background-color: #206294;
+            border-radius: 10px;
+            padding: 5% 0;
+
+            a {
+                color: white;
+
+                span {
+                    color: black;
+                }
+            }
+
+            img {
+                display: block;
+                margin: 2% auto;
+            }
+        }
+
+        li {
+            text-align: center;
+
+            a {
+                text-decoration: none;
+                color: black;
+                font-size: max(1dvw, 1rem);
+
+                span {
+                    font-size: max(1.5dvw, 1rem);
+                    font-weight: bold;
+                    color: #5ca5ca;
+                }
+            }
+
+            img {
+                display: none;
+                width: 50%;
+            }
+        }
+    }
+}

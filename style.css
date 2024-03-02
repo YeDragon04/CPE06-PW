@@ -10,8 +10,8 @@ ul {
 }
 
 header {
-    aspect-ratio: 1/.05;
-    background-color: white;
+    padding: 20px 0;
+    background-color: black;
 
     .header-box>* {
         margin: 0 5%;
@@ -26,13 +26,14 @@ header {
         .header-title {
             border-radius: 10px;
             margin-left: 2%;
-            box-shadow:inset 0 0 0 50px transparent;
-            transition: box-shadow .5s, padding 1s;
+            box-shadow: inset 0 0 0 0 transparent;
+            transition: padding 1s;
+            color: white;
         }
 
         .header-title:hover {
-            color: #206294;
-            box-shadow: inset 0 0 0 0 #000034;
+            color: #000034;
+            animation: head-title-effect .3s ease-out forwards;
             padding: .25%;
         }
 
@@ -58,33 +59,36 @@ header {
                 align-items: center;
 
                 a:hover {
-
                     padding: 5px 0;
-                    border-block:1px solid black;
+                    border-block: 1px solid white;
                     color: #206294;
                 }
+
                 a {
                     font-size: max(1.5dvw, 1rem);
                     color: black;
                     text-decoration: none;
                     transition: top .5s, padding .1s;
+                    color: white;
                 }
             }
         }
     }
 }
 
-#group:hover > .hero-container {
+#group:hover>.hero-container {
     border: solid;
 }
 
 .hero-section {
-    box-shadow: inset 0 20px 10px -10px white;
+    box-shadow: inset 0 20px 10px -10px;
     background-image: url("img/hero-bg.webp");
-    background-repeat: repeat;
-    background-size: 100% auto;
     width: 100%;
     padding-bottom: 15%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .hero-container {
         height: 100%;
@@ -116,10 +120,16 @@ header {
             display: flex;
             justify-content: space-around;
 
+            img:hover {
+                transform: scaleX(-1);
+                content: url("img/profile2.webp");
+            }
+
             img {
                 display: block;
                 border-radius: 100dvw;
                 width: 60%;
+                transition: transform .5s;
             }
 
 
@@ -137,6 +147,7 @@ header {
     box-shadow: 0 -10px 10px 0 #000034;
     background-color: #000034;
     padding-bottom: 30%;
+
     .files-container {
         width: 90%;
         margin: 0 auto;
@@ -148,14 +159,14 @@ header {
             color: #206294;
             animation: distort1 300ms linear infinite;
         }
-    
+
         h3:hover:after {
             top: 50.5%;
             left: 50.5%;
             color: #679dc1;
             animation: distort2 300ms linear infinite;
         }
-    
+
         h3:hover:before,
         h3:hover:after {
             position: absolute;
@@ -164,17 +175,22 @@ header {
             z-index: -1;
             font-size: max(4.75dvw, 1rem);
         }
-    
+
         .files-title {
-            padding: 2% 0;
+            padding: 4% 0;
             font-size: max(4dvw, 1rem);
             text-align: center;
             position: relative;
             z-index: 1;
-    
+
             h3 {
                 width: fit-content;
                 margin: 0 auto;
+                color: white;
+                animation: fade-in linear;
+                animation-timeline: view();
+                position: relative;
+                animation-range-end: 200px;
             }
         }
 
@@ -229,7 +245,7 @@ header {
 
 footer {
     background-color: white;
-    padding-bottom: 25%;
+    padding-bottom: 30%;
     box-shadow: 0 -10px 20px 30px white;
 
     h3:hover:before {
@@ -266,10 +282,15 @@ footer {
         h3 {
             width: fit-content;
             margin: 0 auto;
+            animation: fade-in linear;
+            animation-timeline: view();
+            animation-range-end: 200px;
+            position: relative;
         }
     }
 
-    .footer-box > :last-child {
+
+    .footer-box> :last-child {
         display: none;
     }
 
@@ -302,6 +323,7 @@ footer {
             text-align: center;
             border-radius: 10px;
             transition: padding .1s, box-shadow .1s;
+
             a {
                 text-decoration: none;
                 color: black;
@@ -322,118 +344,139 @@ footer {
 
         }
 
-        
+
     }
+}
+
+@keyframes head-title-effect {
+    to {
+        box-shadow: inset 550px 0 0 -50px #b7e2f8;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        scale: .5;
+        opacity: 0;
+        top: -100px;
+    }
+
+    to {
+        scale: 1;
+        opacity: 1;
+        top: 0;
+    }
+
 }
 
 @keyframes distort1 {
     0% {
-        top: 49.5%;
-        left: 49.5%;
-        
+        top: 49%;
+        left: 49%;
+
     }
 
     12.5% {
-        top: 49.5%;
+        top: 49%;
         left: 50%;
-        
+
     }
 
     25% {
-        top: 49.5%;
-        left: 50.5%;
-        
+        top: 49%;
+        left: 51%;
+
     }
 
     37.5% {
         top: 50%;
-        left: 50.5%;
-        
+        left: 51%;
+
     }
 
     50% {
-        top: 50.5%;
-        left: 50.5%;
-        
+        top: 51%;
+        left: 51%;
+
     }
 
     62.5% {
-        top: 50.5%;
+        top: 51%;
         left: 50%;
-        
+
     }
 
     75% {
-        top: 50.5%;
-        left: 49.5%;
-        
+        top: 51%;
+        left: 49%;
+
     }
 
     87.5% {
         top: 50%;
-        left: 49.5%;
-        
+        left: 49%;
+
     }
 
     100% {
-        top: 49.5%;
-        left: 49.5%;
-        
+        top: 49%;
+        left: 49%;
+
     }
 }
 
 @keyframes distort2 {
     0% {
-        top: 50.5%;
-        left: 50.5%;
-        
+        top: 51%;
+        left: 51%;
+
     }
 
     12.5% {
         top: 50%;
-        left: 50.5%;
-        
+        left: 51%;
+
     }
 
     25% {
-        top: 49.5%;
-        left: 50.5%;
-        
+        top: 49%;
+        left: 51%;
+
     }
 
     37.5% {
-        top: 49.5%;
+        top: 49%;
         left: 50%;
-        
+
     }
 
     50% {
-        top: 49.5%;
-        left: 49.5%;
-        
+        top: 49%;
+        left: 49%;
+
     }
 
     62.5% {
         top: 50%;
-        left: 49.5%;
-        
+        left: 49%;
+
     }
 
     75% {
-        top: 50.5%;
-        left: 49.5%;
-        
+        top: 51%;
+        left: 49%;
+
     }
 
     87.5% {
-        top: 50.5%;
+        top: 51%;
         left: 50%;
-        
+
     }
 
     100% {
-        top: 50.5%;
-        left: 50.5%;
-        
+        top: 51%;
+        left: 51%;
+
     }
 }

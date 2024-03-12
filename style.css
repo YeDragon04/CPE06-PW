@@ -31,13 +31,13 @@ header {
             color: white;
         }
 
-        .header-title:hover {
+        .header-title:active {
             color: #000034;
             animation: head-title-effect .3s ease-out forwards;
             padding: .25%;
         }
 
-        .header-title:hover h2:before {
+        .header-title:active h2:before {
             content: "My nickname is ";
             color: #5ca5ca;
         }
@@ -81,9 +81,8 @@ header {
 }
 
 .hero-section {
-    
+    min-height: 100dvh;
     background-image: url("img/hero-bg.webp");
-    width: 100%;
     padding-bottom: 15%;
     background-attachment: fixed;
     background-position: center;
@@ -150,31 +149,33 @@ header {
 }
 
 .files-section {
+    
     box-shadow: 0 -10px 10px 0 #000034;
     background-color: #000034;
     padding-bottom: 30%;
+    min-height: 100dvh;
 
     .files-container {
         width: 90%;
         margin: 0 auto;
         padding-bottom: 10%;
 
-        h3:hover:before {
+        h3:hover::before {
             top: 49.5%;
             left: 49.5%;
             color: #206294;
             animation: distort1 300ms linear infinite;
         }
 
-        h3:hover:after {
+        h3:hover::after {
             top: 50.5%;
             left: 50.5%;
             color: #679dc1;
             animation: distort2 300ms linear infinite;
         }
 
-        h3:hover:before,
-        h3:hover:after {
+        h3:hover::before,
+        h3:hover::after {
             position: absolute;
             content: 'Files';
             transform: translate(-50%, -50%);
@@ -243,6 +244,7 @@ header {
                     transition: display 1s;
                     display: none;
                     width: 50%;
+                    max-height: 350px;
                 }
             }
         }
@@ -250,6 +252,7 @@ header {
 }
 
 footer {
+    min-height: 100dvh;
     background-color: white;
     padding-bottom: 30%;
     box-shadow: 0 -10px 20px 30px white;
@@ -357,7 +360,7 @@ footer {
 
 @keyframes head-title-effect {
     to {
-        box-shadow: inset 550px 0 0 -50px #b7e2f8;
+        box-shadow: inset 100dvw 0 0 -50px #b7e2f8;
     }
 }
 

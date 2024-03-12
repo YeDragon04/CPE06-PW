@@ -143,12 +143,12 @@ ul {
 
 .navigation-links li {
 	border-top: none;
-	padding: 10px 0;
+	padding: 2% 0;
 }
 
 .navigation-links li:hover {
 	border-top: 3px solid;
-	padding-top: 7px;
+	padding-top: calc(2% - 2.5px);
 }
 
 .navigation-links li:hover a,
@@ -161,7 +161,7 @@ ul {
 	color: black;
 	text-decoration: none;
 	font-weight: 600;
-	font-size: max(2dvw, .75em);
+	font-size: max(2dvw, .5em);
 }
 
 .notebooks {
@@ -190,7 +190,7 @@ ul {
 .sliders-links a:visited {
 	color: black;
 	text-decoration: none;
-	font-size: max(1.75dvw, 1em);
+	font-size: max(1.75dvw, .5em);
 	font-weight: bold;
 	position: relative;
 }
@@ -271,7 +271,14 @@ ul {
 
 .recent-posts-panel {
 	gap: 5%;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.recent-posts-panel > li {
+	flex-grow: 1;
+	flex-basis: 20%;
+	word-wrap: normal;
 }
 
 .recent-posts-panel li > * {
@@ -280,18 +287,18 @@ ul {
 
 .recent-posts-panel h3 {
 	padding: 5% 0;
-	font-size: max(1.3dvw, 10px);
+	font-size: max(1.3dvw, 1em);
 	font-weight: bold;
 	border-bottom: 3px solid;
 }
 
 .recent-posts-panel p {
-	font-size: max(1.25dvw, 1em);
+	font-size: max(1.5dvw, .7em);
 }
 
 .recent-posts-panel a {
 	color: black;
-	font-size: max(1.3dvw, 1em);
+	font-size: max(1.3dvw, .7em);
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -307,15 +314,29 @@ ul {
 
 .footer-panel {
 	gap: 5%;
-	justify-content: space-between;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .footer-panel>* {
-	flex-basis: 30%;
+	flex-basis: 20%;
+	flex-grow: 1;
 }
 
 .footer-panel li > * {
 	margin-bottom: 5%;
+}
+
+.footer-panel h3 {
+	font-size: max(1dvw, 1em);
+}
+
+.footer-panel p {
+	font-size: max(1dvw, .5em);
+}
+
+.footer-panel img {
+	width: 50%;
 }
 
 .footer-panel-signup form {
@@ -338,4 +359,42 @@ ul {
 	font-size: max(1.5dvw, 10px);
 	font-weight: bold;
 	color: white;
+}
+
+.footer-copyright {
+	font-size: max(1dvw,.5em);
+}
+
+@media (orientation: portrait) {
+	.panel-box {
+		flex-direction: column;
+	}
+
+	.panel-box > li {
+		margin-bottom: 5%;
+	}
+
+	.portfolio-thumbnails {
+		flex-direction: column;
+	}
+
+	.portfolio-thumbnails li {
+		margin-bottom: 10%;
+	}
+
+	.recent-posts-panel {
+		flex-direction: column;
+	}
+
+	.footer-panel {
+		flex-direction: column;
+	}
+
+	.footer-panel > li {
+		margin-bottom: 5%;
+	}
+
+	.footer-copyright {
+		flex-direction: column;
+	}
 }

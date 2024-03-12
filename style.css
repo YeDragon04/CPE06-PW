@@ -206,6 +206,7 @@ header {
             display: grid;
             width: 100%;
             grid-template-columns: 40% 40%;
+            grid-template-rows: 300px 300px;
             justify-content: space-around;
             row-gap: 20px;
 
@@ -244,7 +245,8 @@ header {
                     transition: display 1s;
                     display: none;
                     width: 50%;
-                    max-height: 350px;
+                    
+
                 }
             }
         }
